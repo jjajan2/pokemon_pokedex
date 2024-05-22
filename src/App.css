@@ -1,7 +1,20 @@
+@font-face {
+  font-family: "DOSGothic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSGothic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
+  font-family: "DOSGothic";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #ddd;
 }
 
 a {
@@ -15,6 +28,8 @@ li {
 
 .pokemon_list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 80vw;
+  margin: 80px auto 0;
 }
