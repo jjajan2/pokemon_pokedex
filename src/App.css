@@ -25,11 +25,3 @@ ul,
 li {
   list-style: none;
 }
-
-.pokemon_list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  max-width: 80vw;
-  margin: 80px auto 0;
-}

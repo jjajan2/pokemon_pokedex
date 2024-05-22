@@ -1,6 +1,7 @@
-li {
+.pokemon_box {
   background-color: #fff;
   padding: 24px 16px 16px;
+  border: solid 1px #eee;
 }
 
 .img {
@@ -22,8 +23,9 @@ li {
   flex: 1;
   display: inline-block;
   height: 30px;
-  line-height: 30px;
+  line-height: 32px;
   text-align: center;
+  color: #fff;
 }
 
 .type_box.grass {
@@ -40,22 +42,26 @@ li {
 
 .type_box.flying {
   background-color: #c3e0f2;
+  color: #222;
 }
 
 .type_box.water {
-  background-color: #69a5e4;
+  background-color: #7aaee5;
 }
 
 .type_box.bug {
   background-color: #d1d972;
+  color: #222;
 }
 
 .type_box.normal {
-  background-color: #c5c5c5;
+  background-color: #cfcfcf;
+  color: #222;
 }
 
 .type_box.electric {
   background-color: #f9da46;
+  color: #222;
 }
 
 .type_box.ground {
@@ -64,6 +70,7 @@ li {
 
 .type_box.fairy {
   background-color: #ffdee8;
+  color: #222;
 }
 
 .type_box.ice {
@@ -83,5 +90,17 @@ li {
 }
 
 .type_box.steel {
-  background-color: #c39b6d;
+  background-color: #818dab;
+}
+
+.type_box.dark {
+  background-color: #444;
+}
+
+.type_box.ghost {
+  background-color: #a656a7;
+}
+
+.type_box.dragon {
+  background-color: #567ad6;
 }

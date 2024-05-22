@@ -1,0 +1,32 @@
+.search_from {
+  width: 100%;
+  max-width: 20vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.search_input {
+  width: calc(100% - 36px);
+  height: 36px;
+  outline: none;
+}
+
+.search_button {
+  width: 36px;
+  height: 36px;
+}
+
+.pokemon_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 80vw;
+  margin: 40px auto 0;
+}
+
+.no_posts {
+  grid-column: 6 / 1;
+  text-align: center;
+  background-color: transparent;
+}

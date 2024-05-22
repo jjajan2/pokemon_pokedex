@@ -16,10 +16,10 @@ function Pokemonbox({ data }) {
     }
 
     fetchTypes();
-  }, [typeList]);
+  }, [typeList, types]);
 
   return (
-    <li>
+    <li className="pokemon_box">
       <div className="img">
         <img src={gifUrl} alt={name} />
       </div>
