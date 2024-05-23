@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <div className="header_inner">
-        <h1>Pokemon Pokédex</h1>
+        <h1 onClick={() => (window.location.href = "/")}>Pokemon Pokédex</h1>
       </div>
     </header>
   );

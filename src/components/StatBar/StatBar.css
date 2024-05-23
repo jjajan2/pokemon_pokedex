@@ -1,0 +1,29 @@
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stat_name {
+  display: inline-block;
+  width: 120px;
+}
+
+.stat_value {
+  width: 26px;
+}
+
+.stat_bar {
+  width: 50%;
+  height: 12px;
+  background-color: #eee;
+  position: relative;
+}
+
+.stat_fill {
+  height: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #888;
+}

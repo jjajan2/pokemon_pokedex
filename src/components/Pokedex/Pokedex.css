@@ -1,22 +1,24 @@
 .search_from {
   width: 100%;
-  max-width: 20vw;
+  max-width: 24vw;
   margin: 0 auto;
   display: flex;
   align-items: center;
 }
 
 .search_input {
-  width: calc(100% - 36px);
-  height: 36px;
+  width: calc(100% - 40px);
+  height: 40px;
   outline: none;
-  border: solid 2px #222;
+  border: solid 2px #21414f;
+  padding: 0 8px;
+  font-size: 16px;
 }
 
 .search_button {
-  width: 36px;
-  height: 36px;
-  border: solid 2px #222;
+  width: 40px;
+  height: 40px;
+  background-color: #21414f;
   border-left: 0;
 }
 
@@ -29,11 +31,17 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   max-width: 80vw;
-  margin: 40px auto 0;
+  margin: 50px auto 0;
 }
 
 .no_posts {
   grid-column: 6 / 1;
   text-align: center;
   background-color: transparent;
+  line-height: 20vh;
+}
+
+.types {
+  display: flex;
+  gap: 10px;
 }

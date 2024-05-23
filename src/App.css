@@ -14,7 +14,8 @@
 }
 
 body {
-  background-color: #ddd;
+  background: linear-gradient(#e5f4fb, #8dceeb);
+  background-attachment: fixed;
 }
 
 a {

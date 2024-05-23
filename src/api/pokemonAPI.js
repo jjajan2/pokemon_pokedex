@@ -11,15 +11,21 @@ async function fetchData(offset) {
       const data = await axios.get(pokemon.url);
       const koreanData = await axios.get(data.data.species.url);
 
+      const types = await Promise.all(
+        data.data.types.map(async (type) => {
+          const typeData = await axios.get(type.type.url);
+
+          return typeData.data;
+        })
+      );
+
       return {
         id: koreanData.data.id,
-        color: koreanData.data.color.name,
         name: koreanData.data.names.find((name) => name.language.name === "ko")
           ?.name,
         gifUrl:
-          data.data.sprites.versions["generation-v"]["black-white"].animated
-            .front_default,
-        types: data.data.types.map((type) => type.type.url),
+          data.data.sprites.versions["generation-v"]["black-white"].animated,
+        types: types,
         infoData: data.data,
         koreanData: koreanData.data,
       };

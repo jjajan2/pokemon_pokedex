@@ -2,3 +2,10 @@
   text-align: center;
   padding: 20px;
 }
+
+h1 {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 40px;
+  color: #21414f;
+}

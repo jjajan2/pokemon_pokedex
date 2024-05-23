@@ -1,7 +1,9 @@
 import "./Modal.css";
+import TypeBox from "../TypeBox/TypeBox";
+import StatBar from "../StatBar/StatBar";
 
 function Modal({ isShow, data, onClose }) {
-  console.log(data);
+  const { id, name, gifUrl, types, koreanData, infoData } = data;
 
   const statInfo = {
     hp: data.infoData.stats.find((stat) => stat.stat.name === "hp")?.base_stat,
@@ -19,38 +21,58 @@ function Modal({ isShow, data, onClose }) {
       ?.base_stat,
   };
 
+  console.log(gifUrl);
+
   return (
     <div className="modal">
-      {isShow && data ? (
+      {isShow ? (
         <div className="modal_inner">
           <button onClick={onClose} className="close_button">
             x
           </button>
           <div className="pokemon_info">
             <div className="img">
-              <img src={data.gifUrl} alt={data.name} />
+              <img src={gifUrl.front_default} alt={name} />
             </div>
-            <span>No. {data.id}</span>
-            <h4>{data.name}</h4>
-            <p>
+            <span>No.{id}</span>
+            <h4 className="pokemon_name">{name}</h4>
+            <div className="types">
+              {types.map((type) => {
+                return <TypeBox key={type.id} data={type} />;
+              })}
+            </div>
+            <div className="pokemon_size">
+              <p>키 : {infoData.height / 10}m</p>
+              <p>몸무게 : {infoData.weight / 10}kg</p>
+            </div>
+            <p className="info_text">
               {
-                data.koreanData.flavor_text_entries.findLast(
+                koreanData.flavor_text_entries.findLast(
                   (text) => text.language.name === "ko"
                 ).flavor_text
               }
             </p>
-            <div className="pokemon_size">
-              <p>키 : {data.infoData.height / 10}m</p>
-              <p>몸무게 : {data.infoData.weight / 10}kg</p>
-            </div>
           </div>
           <div className="pokemon_stat">
-            <p>HP : {statInfo.hp}</p>
-            <p>공격력 : {statInfo.attack}</p>
-            <p>방어력 : {statInfo.defense}</p>
-            <p>스페셜 어택 : {statInfo.specialAttack}</p>
-            <p>스페셜 디펜스 : {statInfo.specialDefense}</p>
-            <p>스피드 : {statInfo.speed}</p>
+            <h5>기본 능력치</h5>
+            <StatBar statName={"HP"} statValue={statInfo.hp} />
+            <StatBar statName={"공격력"} statValue={statInfo.attack} />
+            <StatBar statName={"방어력"} statValue={statInfo.hp} />
+            <StatBar
+              statName={"스페셜 어택"}
+              statValue={statInfo.specialAttack}
+            />
+            <StatBar
+              statName={"스페셜 디펜스"}
+              statValue={statInfo.specialDefense}
+            />
+            <StatBar statName={"스피드"} statValue={statInfo.speed} />
+          </div>
+          <div className="img_list">
+            <img src={gifUrl.front_default} alt="" />
+            <img src={gifUrl.front_shiny} alt="" />
+            <img src={gifUrl.back_default} alt="" />
+            <img src={gifUrl.back_shiny} alt="" />
           </div>
         </div>
       ) : (
