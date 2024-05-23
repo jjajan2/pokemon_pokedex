@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: solid 2px #222;
+}
+
+.close_button {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  font-size: 26px;
+  width: 36px;
+  height: 36px;
+  border: solid 2px #222;
+  background-color: #ddd;
+}

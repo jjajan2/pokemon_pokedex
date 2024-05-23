@@ -13,13 +13,15 @@ async function fetchData(offset) {
 
       return {
         id: koreanData.data.id,
-        name: koreanData.data.names[2].name,
         color: koreanData.data.color.name,
-        imgUrl: data.data.sprites.front_default,
+        name: koreanData.data.names.find((name) => name.language.name === "ko")
+          ?.name,
         gifUrl:
           data.data.sprites.versions["generation-v"]["black-white"].animated
             .front_default,
         types: data.data.types.map((type) => type.type.url),
+        infoData: data.data,
+        koreanData: koreanData.data,
       };
     })
   );

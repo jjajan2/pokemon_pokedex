@@ -10,11 +10,18 @@
   width: calc(100% - 36px);
   height: 36px;
   outline: none;
+  border: solid 2px #222;
 }
 
 .search_button {
   width: 36px;
   height: 36px;
+  border: solid 2px #222;
+  border-left: 0;
+}
+
+.search_button img {
+  width: 20px;
 }
 
 .pokemon_list {

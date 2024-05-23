@@ -25,3 +25,9 @@ ul,
 li {
   list-style: none;
 }
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}

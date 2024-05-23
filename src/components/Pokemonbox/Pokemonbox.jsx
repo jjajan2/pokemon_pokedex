@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Pokemonbox.css";
 
-function Pokemonbox({ data }) {
+function Pokemonbox({ data, onClick }) {
   const { id, name, gifUrl, types } = data;
   const [typeList, setTypeList] = useState([]);
 
@@ -19,7 +19,7 @@ function Pokemonbox({ data }) {
   }, [typeList, types]);
 
   return (
-    <li className="pokemon_box">
+    <li className="pokemon_box" onClick={onClick}>
       <div className="img">
         <img src={gifUrl} alt={name} />
       </div>

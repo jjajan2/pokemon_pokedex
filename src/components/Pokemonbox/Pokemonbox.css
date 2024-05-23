@@ -1,7 +1,9 @@
 .pokemon_box {
+  cursor: pointer;
   background-color: #fff;
   padding: 24px 16px 16px;
-  border: solid 1px #eee;
+  border: solid 2px #222;
+  box-shadow: 6px 6px 0px #222;
 }
 
 .img {

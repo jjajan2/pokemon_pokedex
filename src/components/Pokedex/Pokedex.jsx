@@ -3,6 +3,7 @@ import "./Pokedex.css";
 import fetchData from "../../api/pokemonAPI";
 import InputText from "../atoms/InputText/InputText";
 import Pokemonbox from "../Pokemonbox/Pokemonbox";
+import Modal from "../Modal/Modal";
 import SearchIcon from "../../img/search_icon.svg";
 
 function Pokedex() {
@@ -10,6 +11,8 @@ function Pokedex() {
   const [offset, setOffset] = useState(0);
   const [searchText, setSearchText] = useState("");
   const [mapPokemonList, setMapPokemonList] = useState([]);
+  const [selectPokemon, setSelectPokemon] = useState(null);
+  const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
     const loadPokemon = async () => {
@@ -63,10 +66,24 @@ function Pokedex() {
           <img src={SearchIcon} alt="검색" />
         </button>
       </form>
+      {isShow && (
+        <Modal
+          isShow={isShow}
+          data={selectPokemon}
+          onClose={() => setIsShow(false)}
+        />
+      )}
       <ul className="pokemon_list">
         {mapPokemonList.length > 0 ? (
           mapPokemonList.map((pokemon) => (
-            <Pokemonbox key={pokemon.id} data={pokemon} />
+            <Pokemonbox
+              key={pokemon.id}
+              data={pokemon}
+              onClick={() => {
+                setSelectPokemon(pokemon);
+                setIsShow(true);
+              }}
+            />
           ))
         ) : (
           <li className="no_posts">데이터가 없습니다.</li>
